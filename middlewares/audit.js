@@ -12,13 +12,13 @@ exports.auditMiddleware = async (req, res, next) => {
                 }
                 break;
             case 'PUT':
-                if (req.baseUrl.startsWith('/v1/university/')) {
+                if (req.baseUrl.startsWith('/v1/university')) {
                     const universityName = req.body.university.name;
                     action = `Update data of university with name: ${universityName}`;
                 }
                 break;
             case 'DELETE':
-                if (req.baseUrl.startsWith('/v1/university/')) {
+                if (req.baseUrl.startsWith('/v1/university')) {
                     const universityId = req.params.id;
                     action = `Delete university with ID: ${universityId}`;
                 }
